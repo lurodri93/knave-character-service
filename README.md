@@ -16,7 +16,9 @@ Este microservicio genera un personaje aleatorio de Knave y devuelve su informac
 ### Respuesta
 ```json
 {
-  "player_id": "...",
+  "name": "...",
+  "level": 1,
+  "xp": "0/500",
   "hit_points": 6,
   "stats": {...},
   "inventory": {...},
