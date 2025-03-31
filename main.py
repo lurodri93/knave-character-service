@@ -4,10 +4,14 @@ from character_generator import generate_character
 
 app = FastAPI()
 
+class BodyContent(BaseModel):
+    name: str
+
 class CreateCharacterRequest(BaseModel):
-    name: str = "anon"
+    body: BodyContent
 
 @app.post("/create-character")
-def create_character(request: CreateCharacterRequest):
-    character = generate_character(request.name)
+async def create_character(request: CreateCharacterRequest):
+    name = request.body.name
+    character = generate_character(name)
     return character
