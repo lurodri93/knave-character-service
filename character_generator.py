@@ -50,7 +50,7 @@ def generate_character(name: str):
     full_data = {
         "name": name,
         "level": 1,
-        "experience": 0/500,
+        "experience": "0/500",
         "hit_points": hp,
         **flat_stats,
         **inventory,
