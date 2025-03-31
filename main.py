@@ -5,9 +5,9 @@ from character_generator import generate_character
 app = FastAPI()
 
 class CreateCharacterRequest(BaseModel):
-    player_id: str = "anon"
+    name: str = "anon"
 
 @app.post("/create-character")
 def create_character(request: CreateCharacterRequest):
-    character = generate_character(request.player_id)
+    character = generate_character(request.name)
     return character
