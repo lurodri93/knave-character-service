@@ -11,9 +11,7 @@ class CreateCharacterRequest(BaseModel):
     body: BodyContent
 
 @app.post("/create-character")
-async def create_character(request: Request):
-    data = await request.json()
-    print("Request recibido:", data)
-    name = data["body"]["name"]
+async def create_character(request: CreateCharacterRequest):
+    name = request.body.name
     character = generate_character(name)
     return character
